@@ -1,0 +1,10 @@
+CRITICAL - 2023-11-07 03:06:07 --> Undefined variable: totalTime
+#0 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Debug/Toolbar/Views/toolbar.tpl.php(56): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/home/u72804394...', 56, Array)
+#1 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Debug/Toolbar.php(498): include('/home/u72804394...')
+#2 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Debug/Toolbar.php(455): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#3 /home/u728043949/domains/csistmarkschurch.com/public_html/app/Config/Events.php(44): CodeIgniter\Debug\Toolbar->respond()
+#4 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#5 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Events/Events.php(188): call_user_func(Object(Closure))
+#6 /home/u728043949/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(289): CodeIgniter\Events\Events::trigger('pre_system')
+#7 /home/u728043949/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#8 {main}

@@ -1,0 +1,11 @@
+CRITICAL - 2023-11-27 11:30:36 --> unlink(/home/u728043949/domains/csistmarkschurch.com/public_html/writable/debugbar/debugbar_1701104240.json): No such file or directory
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(/home/u7...', '/home/u72804394...', 106, Array)
+#1 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Debug/Toolbar/Collectors/History.php(106): unlink('/home/u72804394...')
+#2 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Debug/Toolbar.php(483): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles(1701106230, 20)
+#3 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Debug/Toolbar.php(455): CodeIgniter\Debug\Toolbar->format(Array, 'html')
+#4 /home/u728043949/domains/csistmarkschurch.com/public_html/app/Config/Events.php(44): CodeIgniter\Debug\Toolbar->respond()
+#5 [internal function]: CodeIgniter\Events\Events::Config\{closure}()
+#6 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Events/Events.php(188): call_user_func(Object(Closure))
+#7 /home/u728043949/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(289): CodeIgniter\Events\Events::trigger('pre_system')
+#8 /home/u728043949/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#9 {main}

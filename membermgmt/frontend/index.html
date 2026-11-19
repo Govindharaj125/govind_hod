@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSI St Marks Church - Login</title>
+  <link rel="stylesheet" href="/membermgmt/assets/style.css" />
+</head>
+<body>
+  <div class="login-container">
+    <img src="/membermgmt/assets/church-logo.jpg" alt="Church Logo" class="logo" />
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="username">Username:</label>
+      <input type="text" id="username" required />
+      <label for="password">Password:</label>
+      <input type="password" id="password" required />
+      <button type="submit">Login</button>
+    </form>
+    <div id="message"></div>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      const messageEl = document.getElementById('message');
+      messageEl.textContent = "";
+      messageEl.style.color = "";
+
+      if (!username || !password) {
+        messageEl.textContent = "Please enter username and password.";
+        messageEl.style.color = "red";
+        return;
+      }
+
+      try {
+        const response = await fetch('/membermgmt/api/login.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+          body: JSON.stringify({ username, password })
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          // Store user role and username in sessionStorage for dashboard use
+          sessionStorage.setItem('userRole', result.role);
+          sessionStorage.setItem('username', username);
+
+          // Redirect to dashboard
+          window.location.href = 'dashboard.html';
+        } else {
+          messageEl.textContent = result.message || "Login failed.";
+          messageEl.style.color = "red";
+        }
+      } catch (error) {
+        messageEl.textContent = "Login error: " + error.message;
+        messageEl.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>

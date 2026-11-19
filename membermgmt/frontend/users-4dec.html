@@ -1,0 +1,173 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const userTableBody = document.querySelector('#userTable tbody');
+  const usernameInput = document.getElementById('username');
+  const passwordInput = document.getElementById('password');
+  const roleSelect = document.getElementById('role');
+  const addUserBtn = document.getElementById('addUserBtn');
+  const updateUserBtn = document.getElementById('updateUserBtn');
+  const cancelBtn = document.getElementById('cancelBtn');
+  const userMsg = document.getElementById('userMsg');
+
+  let editingUsername = null;
+
+  async function fetchUsers() {
+    const response = await fetch('/membermgmt/api/users.php', {
+      credentials: 'include',
+    });
+    const result = await response.json();
+    if (result.success) {
+      renderUserTable(result.data);
+    } else {
+      userMsg.textContent = 'Failed to load users: ' + result.message;
+      userMsg.style.color = 'red';
+    }
+  }
+
+  function renderUserTable(users) {
+    userTableBody.innerHTML = '';
+    users.forEach(user => {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${user.Uname}</td>
+        <td>${user.Role}</td>
+        <td>
+          <button class="edit-btn" data-username="${user.Uname}">Edit</button>
+          <button class="delete-btn" data-username="${user.Uname}">Delete</button>
+        </td>
+      `;
+      userTableBody.appendChild(tr);
+    });
+  }
+
+  userTableBody.addEventListener('click', async (e) => {
+    if (e.target.classList.contains('edit-btn')) {
+      const uname = e.target.getAttribute('data-username');
+      usernameInput.value = uname;
+      passwordInput.value = '';
+      editingUsername = uname;
+
+      // Fetch user details and fill role
+      const response = await fetch('/membermgmt/api/users.php', {
+        method: 'GET',
+        credentials: 'include',
+      });
+      const result = await response.json();
+      if (result.success) {
+        const user = result.data.find(u => u.Uname === uname);
+        if (user) {
+          roleSelect.value = user.Role;
+          addUserBtn.disabled = true;
+          updateUserBtn.disabled = false;
+          cancelBtn.disabled = false;
+          usernameInput.disabled = true;
+          userMsg.textContent = '';
+        }
+      }
+    } else if (e.target.classList.contains('delete-btn')) {
+      const uname = e.target.getAttribute('data-username');
+      if (confirm(`Delete user ${uname}?`)) {
+        const response = await fetch('/membermgmt/api/users.php', {
+          method: 'DELETE',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username: uname }),
+        });
+        const result = await response.json();
+        if (result.success) {
+          userMsg.textContent = `User ${uname} deleted successfully`;
+          userMsg.style.color = 'green';
+          fetchUsers();
+          resetForm();
+        } else {
+          userMsg.textContent = `Failed to delete user: ${result.message}`;
+          userMsg.style.color = 'red';
+        }
+      }
+    }
+  });
+
+  addUserBtn.addEventListener('click', async () => {
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value;
+    const role = roleSelect.value;
+
+    if (!username || !password || !role) {
+      userMsg.textContent = 'Username, password, and role are required to add user.';
+      userMsg.style.color = 'red';
+      return;
+    }
+
+    const response = await fetch('/membermgmt/api/users.php', {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username, password, role }),
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      userMsg.textContent = 'User added successfully';
+      userMsg.style.color = 'green';
+      fetchUsers();
+      resetForm();
+    } else {
+      userMsg.textContent = 'Add user failed: ' + result.message;
+      userMsg.style.color = 'red';
+    }
+  });
+
+  updateUserBtn.addEventListener('click', async () => {
+    if (!editingUsername) return;
+
+    const role = roleSelect.value;
+    const password = passwordInput.value;
+
+    if (!role) {
+      userMsg.textContent = 'Role is required to update user.';
+      userMsg.style.color = 'red';
+      return;
+    }
+
+    const data = { username: editingUsername, role };
+    if (password) {
+      data.password = password;
+    }
+
+    const response = await fetch('/membermgmt/api/users.php', {
+      method: 'PUT',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+    if (result.success) {
+      userMsg.textContent = `User ${editingUsername} updated successfully`;
+      userMsg.style.color = 'green';
+      fetchUsers();
+      resetForm();
+    } else {
+      userMsg.textContent = 'Update failed: ' + result.message;
+      userMsg.style.color = 'red';
+    }
+  });
+
+  cancelBtn.addEventListener('click', () => {
+    resetForm();
+  });
+
+  function resetForm() {
+    usernameInput.value = '';
+    passwordInput.value = '';
+    roleSelect.value = '';
+    editingUsername = null;
+    usernameInput.disabled = false;
+    addUserBtn.disabled = false;
+    updateUserBtn.disabled = true;
+    cancelBtn.disabled = true;
+    userMsg.textContent = '';
+  }
+
+  // Initial load
+  fetchUsers();
+});

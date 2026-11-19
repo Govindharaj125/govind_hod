@@ -1,0 +1,23 @@
+CRITICAL - 2023-05-03 14:35:15 --> Class PageController does not exist
+#0 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Debug/Toolbar/Collectors/Routes.php(107): ReflectionMethod->__construct('PageController', '_remap')
+#1 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Debug/Toolbar/Collectors/BaseCollector.php(318): CodeIgniter\Debug\Toolbar\Collectors\Routes->display()
+#2 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Debug/Toolbar.php(128): CodeIgniter\Debug\Toolbar\Collectors\BaseCollector->getAsArray()
+#3 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Debug/Toolbar.php(353): CodeIgniter\Debug\Toolbar->run(1683124514.5112, 0.5141, Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+#4 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Filters/DebugToolbar.php(75): CodeIgniter\Debug\Toolbar->prepare(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+#5 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Filters/Filters.php(199): CodeIgniter\Filters\DebugToolbar->after(Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response))
+#6 /home/u728043949/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(418): CodeIgniter\Filters\Filters->run('', 'after')
+#7 /home/u728043949/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/u728043949/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-05-03 20:36:30 --> Unknown column 'User_Password' in 'where clause'
+#0 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT *\nFROM `...')
+#1 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /home/u728043949/domains/csistmarkschurch.com/public_html/system/Model.php(489): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u728043949/domains/csistmarkschurch.com/public_html/app/Controllers/PageController.php(148): CodeIgniter\Model->first()
+#6 /home/u728043949/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(914): App\Controllers\PageController->login()
+#7 /home/u728043949/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+#8 /home/u728043949/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/u728043949/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#10 {main}

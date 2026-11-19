@@ -1,0 +1,95 @@
+<?php namespace App\Models;
+
+use CodeIgniter\Model;
+
+class CardMembersModel extends Model
+{
+   //old one protected $table = 'card_members';
+   protected $table = 'masterdb';
+    protected $primaryKey = 'id';
+    protected $allowedFields = [
+/*      'Prefix',
+        'Name',
+        'Full_Name',
+        'New_Family_Card_No',
+        'Date_of_membership',
+        'Card_No',
+        'Card_Suffix',
+        'CardNumber',
+        'Relationship',
+        'Status',
+        'Address_1_2',
+        'Address1',
+        'Address2',
+        'Address_3',
+        'Address_4',
+        'Pincode',
+        'Gender',
+        'Marital_Status',
+        'Relationship1',
+        'DOB',
+        'Age',
+        'Agenumeric',
+        '60_years',
+        'DOM',
+        'MarriageDt',
+        'MarriageMon',
+        'DOD',
+        'Carol_Round_Area',
+        'Qualification',
+        'Profession',
+        'Company',
+        'Monthly_Income',
+        'Email',
+        'Mobile_1',
+        'Mobile_2',
+        'Landline',
+        'User_Password'
+ */
+'MembershipDt',
+'Title',
+'Name',
+'MemberName',
+'NewCardNo',
+'Suffix',
+'CardNo',
+'Relationship',
+'Gender',
+'MaritalStatus',
+'Status',
+'MobNo',
+'SecMobNo',
+'Landline',
+'DOB',
+'DOBday',
+'DOBMon',
+'DOBNameList',
+'DOM',
+'DOMDay',
+'DOMMon',
+'CoupleName',
+'DOMNameList',
+'Address',
+'Address1',
+'Address2',
+'Address3',
+'Address4',
+'PinCode',
+'CarolRoundArea',
+'Qualification',
+'Profession',
+'Company',
+'Email',
+'BloodGroup',
+'DeathDt',
+'AgeOfDeath',
+'ReasonforDeath',
+'EditBy',
+'EditDt',
+'SNo',
+'BurialCemetry'
+    
+    ];
+}
+
+?>

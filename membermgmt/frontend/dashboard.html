@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSI St. Marks Church - Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/church-app.css" />
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div style="display:flex; align-items:center;">
+        <img class="header-logo" src="../assets/church-logo.jpg" alt="Church Logo" />
+        <span class="header-title">CSI St. Marks Church - Carols Management</span>
+      </div>
+      <div class="header-userinfo" id="userInfo"></div>
+    </div>
+    <nav class="header-nav" id="navMenu"></nav>
+  </header>
+
+  <main id="appContent">
+    Select a menu item to begin.
+  </main>
+
+<script>
+  const userRole = sessionStorage.getItem('userRole') || 'Admin';
+  const username = sessionStorage.getItem('username') || 'User1';
+
+  const navMenu = document.getElementById('navMenu');
+  const userInfo = document.getElementById('userInfo');
+  const appContent = document.getElementById('appContent');
+
+  function renderMenu(role) {
+    const menuItems = {
+      Admin: [
+        { text: "Member Management", module: "membermgmt" },
+        { text: "Carol Rounds", module: "carol_rounds" },
+        { text: "Member Geo Update", module: "member_update" },
+        { text: "User Management", module: "users" },
+      ],
+      User: [
+        { text: "Member Geo Update", module: "member_update" },
+      ],
+    };
+
+    navMenu.innerHTML = (menuItems[role] || []).map(item =>
+      `<a href="#" onclick="loadModule('${item.module}');return false">${item.text}</a>`
+    ).join("");
+    userInfo.innerHTML = `Logged in as: <strong>${username}</strong> | Role: <strong>${role}</strong> | <a href="/membermgmt/api/logout.php" style="color:#fff;">Logout</a>`;
+  }
+
+  async function loadModule(moduleName) {
+    try {
+      let fragmentName = moduleName;
+      if (moduleName === "membermgmt") fragmentName = "memberdetails";
+
+      const res = await fetch(`/membermgmt/frontend/${fragmentName}.html`);
+      if (!res.ok) throw new Error("Module load failed");
+      const html = await res.text();
+      appContent.innerHTML = html;
+
+      let scriptUrl = null;
+      if (moduleName === "member_update") {
+        scriptUrl = '/membermgmt/frontend/member_update.js';
+      } else if (moduleName === "users") {
+        scriptUrl = '/membermgmt/frontend/user_management.js';
+      } else if (moduleName === "membermgmt") {
+        scriptUrl = '/membermgmt/frontend/memberdetails.js';
+      } else if (moduleName === "carol_rounds") {
+        scriptUrl = '/membermgmt/frontend/carol_rounds.js';
+      }
+      if (scriptUrl) {
+        const script = document.createElement('script');
+        script.src = scriptUrl;
+        document.body.appendChild(script);
+      }
+    } catch (ex) {
+      appContent.innerHTML = `<p style="color:red;">Failed to load module: ${moduleName}</p>`;
+      console.error(ex);
+    }
+  }
+
+  window.loadModule = loadModule;
+  renderMenu(userRole);
+  if (userRole === 'User') {
+    loadModule('member_update');
+  }
+</script>
+</body>
+</html>

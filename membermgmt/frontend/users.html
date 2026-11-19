@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Management</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+        th { background-color: #f0f0f0; }
+        button { margin-right: 5px; }
+        #userMsg { margin-top: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<h2>User Management</h2>
+
+<!-- User Form -->
+<div>
+    <label>Username:</label>
+    <input type="text" id="username">
+
+    <label>Password:</label>
+    <input type="password" id="password">
+
+    <label>Role:</label>
+    <select id="role">
+        <option value="">Select Role</option>
+        <option value="Admin">Admin</option>
+        <option value="User">User</option>
+    </select>
+
+    <button id="addUserBtn">Add User</button>
+    <button id="updateUserBtn" disabled>Update User</button>
+    <button id="cancelBtn" disabled>Cancel</button>
+</div>
+
+<!-- Status Message -->
+<div id="userMsg"></div>
+
+<!-- Users Table -->
+<table id="userTable">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Filled dynamically -->
+    </tbody>
+</table>
+
+<!-- Load external JS (only ONE script now) -->
+<script src="user_management.js"></script>
+
+</body>
+</html>

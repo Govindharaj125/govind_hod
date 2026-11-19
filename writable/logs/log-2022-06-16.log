@@ -1,0 +1,11 @@
+CRITICAL - 2022-06-16 22:36:49 --> Undefined index: Full_Name
+#0 /home/u728043949/domains/csistmarkschurch.in/public_html/app/Views/admin/cardMembers/list.php(158): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/home/u72804394...', 158, Array)
+#1 /home/u728043949/domains/csistmarkschurch.in/public_html/system/View/View.php(246): include('/home/u72804394...')
+#2 /home/u728043949/domains/csistmarkschurch.in/public_html/system/Common.php(1087): CodeIgniter\View\View->render('admin/cardMembe...', Array, true)
+#3 /home/u728043949/domains/csistmarkschurch.in/public_html/app/Libraries/CT_view.php(50): view('admin/cardMembe...', Array, Array)
+#4 /home/u728043949/domains/csistmarkschurch.in/public_html/app/Modules/CTadmin/Controllers/CardMembersController.php(17): App\Libraries\CT_view->adminView('cardMembers/lis...', Array)
+#5 /home/u728043949/domains/csistmarkschurch.in/public_html/system/CodeIgniter.php(914): Modules\CTadmin\Controllers\CardMembersController->index()
+#6 /home/u728043949/domains/csistmarkschurch.in/public_html/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(Modules\CTadmin\Controllers\CardMembersController))
+#7 /home/u728043949/domains/csistmarkschurch.in/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/u728043949/domains/csistmarkschurch.in/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#9 {main}

@@ -1,0 +1,183 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f5f7;
+}
+
+header {
+  background: #003366;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.24);
+  width: 100vw;
+  min-width: 300px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 2vw 0 2vw;
+  background: #003366;
+  min-width: 340px;
+}
+
+.header-logo {
+  height: 44px;
+  width: auto;
+  max-width: 80px;
+  object-fit: contain;
+  margin-right: 15px;
+}
+
+.header-title {
+  font-size: 1.55rem;
+  font-weight: bold;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.header-userinfo {
+  font-size: 1.1rem;
+  color: #fff;
+  white-space: nowrap;
+  text-align: right;
+  margin-left: 28px;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  padding: 7px 34px 8px 34px;
+  background: #003366;
+  flex-wrap: wrap;
+}
+
+.header-nav a {
+  margin: 0 18px;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.15rem;
+  padding: 4px 0;
+  transition: background 0.2s;
+}
+
+.header-nav a:hover {
+  background: #264e9e;
+  border-radius: 3px;
+  text-decoration: underline;
+}
+
+/* Flexbox for SPA – always center modules inside main area */
+#appContent {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 80vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Each module/card is a .container -- centered, white box */
+.container {
+  max-width: 570px;
+  flex: 1 1 auto;
+  margin: 42px auto;
+  background: white;
+  padding: 32px 24px 26px 24px;
+  border-radius: 9px;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.10);
+  /* Ensure consistent centering even in main flex context */
+  display: block;
+}
+
+h2 {
+  margin: 0 0 18px 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.4px;
+  text-align: center;
+}
+
+label { 
+  display: block; 
+  margin-top: 18px; 
+  font-weight: bold; 
+  font-size: 1.01rem;
+}
+
+input[type="text"], input[type="date"], input[type="password"], select, textarea, button {
+  width: 100%;
+  padding: 9px;
+  margin-top: 7px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-size: 1.02rem;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #0055a5;
+  color: white;
+  margin-top: 19px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  transition: background 0.18s;
+}
+button:hover {
+  background-color: #003d7a;
+}
+
+#msg, #userMsg {
+  margin-top: 13px;
+  font-weight: 600;
+}
+#mapUrlLink {
+  margin-top: 11px;
+  display: block;
+  font-size: 0.98rem;
+  word-break: break-all;
+}
+
+/* User management table enhancements */
+table {
+  width: 100%; 
+  border-collapse: collapse; 
+  margin-bottom: 18px; 
+  background: #fff; 
+  border-radius: 5px;
+  box-shadow: 0 1px 4px #eef;
+}
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+}
+th { 
+  background: #eee; 
+}
+
+.form-row { margin-top: 10px; }
+
+/* Responsive layout for mobiles/tablets */
+@media only screen and (max-width: 900px) {
+  .header-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap:7px;
+    padding-right: 2vw;
+  }
+  .header-title {
+    font-size: 1.12rem;
+  }
+  .header-nav a { margin: 0 8px; font-size: 1rem;}
+  .header-userinfo { text-align:left; margin-left:0;}
+  #appContent { padding: 0 3px; }
+}
+@media only screen and (max-width: 600px) {
+  .container { max-width: 98vw; padding: 12px; }
+  .header-title { font-size: 0.98rem; }
+  label { font-size: 0.97rem; }
+}

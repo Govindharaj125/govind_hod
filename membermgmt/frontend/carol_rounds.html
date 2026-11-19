@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carol Rounds Entry - CSIST Marks Church</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+  <style>
+    .container { width: 80%; margin: 30px auto; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 0 15px #ddd; }
+    label { display: block; margin: 10px 0 5px; font-weight: bold; }
+    #locationCheckboxes { max-height: 200px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; width: 400px; margin-bottom: 15px;}
+    input[type="checkbox"] { margin-right: 5px; }
+    input, select, button, textarea { width: 100%; max-width: 400px; padding: 8px; margin-bottom: 10px; }
+    button { background: #3379e9; color: #fff; border: none; border-radius: 3px; font-size: 1em; }
+    button:hover { background: #264e9e; }
+    .success { color: green; margin-bottom: 8px; }
+    .error { color: red; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Carol Rounds Entry</h2>
+
+    <div id="msg"></div>
+
+    <label for="roundDate">Round Date:</label>
+    <input type="date" id="roundDate" />
+
+    <label>Locations (CarolRoundArea with Family Count):</label>
+    <div id="locationCheckboxes"></div>
+
+    <div id="locationCheckboxes"></div>
+<div>
+  <strong>Selected Families Count:</strong> <span id="totalSelectedCount">0</span>
+</div>
+
+
+    <label for="dayOfVisit">Day of Visit:</label>
+    <select id="dayOfVisit">
+      <option value="">Select Day</option>
+      <option value="Day1">Day 1</option>
+      <option value="Day2">Day 2</option>
+      <option value="Day3">Day 3</option>
+    </select>
+
+    <label for="remarks">Remarks:</label>
+    <textarea id="remarks" rows="3" placeholder="Remarks"></textarea>
+
+    <button id="btnSubmit">Submit</button>
+  </div>
+
+  <script>
+    const roundDateInput = document.getElementById('roundDate');
+    const locationContainer = document.getElementById('locationCheckboxes');
+    const dayOfVisitSelect = document.getElementById('dayOfVisit');
+    const remarksInput = document.getElementById('remarks');
+    const btnSubmit = document.getElementById('btnSubmit');
+    const msgDiv = document.getElementById('msg');
+
+    // Initialize date to today
+    roundDateInput.value = new Date().toISOString().split('T')[0];
+
+    // Load carol areas as checkboxes with family count
+    async function loadLocations() {
+      try {
+        const res = await fetch('../api/carol_locations.php', { credentials: 'include' });
+        const data = await res.json();
+        if (data.success) {
+          locationContainer.innerHTML = '';
+          data.data.forEach(area => {
+            if (area.CarolRoundArea) {
+              const div = document.createElement('div');
+              const checkbox = document.createElement('input');
+              checkbox.type = 'checkbox';
+              checkbox.id = 'carol_' + area.CarolRoundArea;
+              checkbox.value = area.CarolRoundArea;
+              checkbox.name = 'locations';
+
+              const label = document.createElement('label');
+              label.htmlFor = checkbox.id;
+              label.textContent = `${area.CarolRoundArea} (${area.AreaCount})`;
+
+              div.appendChild(checkbox);
+              div.appendChild(label);
+              locationContainer.appendChild(div);
+            }
+          });
+        } else {
+          locationContainer.innerHTML = "<span class='error'>Could not load locations.</span>";
+        }
+      } catch (error) {
+        locationContainer.innerHTML = "<span class='error'>Error loading locations.</span>";
+        console.error('Error loading locations:', error);
+      }
+    }
+
+    btnSubmit.addEventListener('click', async () => {
+      const selectedLocations = [...document.querySelectorAll('input[name=locations]:checked')].map(cb => cb.value);
+      const roundDate = roundDateInput.value;
+      const dayOfVisit = dayOfVisitSelect.value;
+      const remarks = remarksInput.value.trim();
+
+      if (!roundDate || !dayOfVisit || selectedLocations.length === 0) {
+        msgDiv.innerHTML = "<span class='error'>Please select round date, day of visit, and at least one location.</span>";
+        return;
+      }
+
+      try {
+        const promises = selectedLocations.map(location => fetch('../api/carol_rounds.php', {
+          method: 'POST',
+          credentials: 'include',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ roundDate, location, dayOfVisit, remarks })
+        }));
+        const results = await Promise.all(promises);
+
+        for (const r of results) {
+          const resJson = await r.json();
+          if (!resJson.success) {
+            msgDiv.innerHTML = `<span class='error'>Error saving: ${resJson.message}</span>`;
+            return;
+          }
+        }
+        msgDiv.innerHTML = "<span class='success'>Carol rounds saved successfully!</span>";
+        // Reset form
+        locationContainer.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+        dayOfVisitSelect.value = '';
+        remarksInput.value = '';
+      } catch (error) {
+        msgDiv.innerHTML = "<span class='error'>Network error. Please try again.</span>";
+      }
+    });
+
+    window.onload = loadLocations;
+    const totalSelectedCountLabel = document.getElementById('totalSelectedCount');
+
+function updateSelectedCount() {
+  const checkedCheckboxes = [...document.querySelectorAll('input[name=locations]:checked')];
+  let totalCount = 0;
+  checkedCheckboxes.forEach(cb => {
+    const label = cb.nextSibling.textContent; // Should be like "AreaName (count)"
+    const countMatch = label.match(/\((\d+)\)$/);
+    if (countMatch) {
+      totalCount += parseInt(countMatch[1], 10);
+    }
+  });
+  totalSelectedCountLabel.textContent = totalCount;
+}
+
+// Attach change event listener on location checkboxes container
+locationContainer.addEventListener('change', updateSelectedCount);
+
+  </script>
+</body>
+</html>

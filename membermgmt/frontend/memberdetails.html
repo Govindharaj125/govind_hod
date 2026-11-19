@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Member Management</h2>
+
+  <label for="searchCardNoInput">Search by Member Card Number:</label>
+  <input type="text" id="searchCardNoInput" placeholder="Enter Member Card Number" autocomplete="off" />
+
+  <label for="searchNameMobileInput">Search by Member Name or Mobile Number:</label>
+  <input type="text" id="searchNameMobileInput" placeholder="Enter Member Name or Mobile" autocomplete="off" />
+
+  <button id="btnLoadMember">Load Member Details</button>
+
+  <div id="memberForm" style="display:none; margin-top:20px;">
+    <label>ID:</label>
+    <input type="text" id="idDisplay" readonly style="background:#f7f7f7;" />
+
+    <label>Member Card Number:</label>
+    <input type="text" id="newCardNoDisplay" readonly style="background:#f7f7f7;" />
+
+    <label for="memberNameInput">Member Name:</label>
+    <input type="text" id="memberNameInput" />
+
+    <label for="mobNoInput">Mobile Number:</label>
+    <input type="text" id="mobNoInput" />
+
+    <label for="addressInput">Address:</label>
+    <input type="text" id="addressInput" />
+
+    <label for="carolRoundAreaInput">Carol Round Area:</label>
+    <input type="text" id="carolRoundAreaInput" />
+
+    <label>Current Location Coordinates:</label>
+    <span id="latitudeDisplay">N/A</span>, <span id="longitudeDisplay">N/A</span>
+
+    <button id="btnGetLocation">Capture Current Geo Location</button>
+
+    <label>Google Maps URL:</label>
+    <a href="#" target="_blank" id="mapUrlLink">Not set</a>
+
+    <button id="btnSave">Save Updates</button>
+
+    <div id="msg"></div>
+  </div>
+</div>

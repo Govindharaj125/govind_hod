@@ -1,0 +1,214 @@
+CRITICAL - 2024-08-24 06:10:11 --> Constant FILTER_SANITIZE_STRING is deprecated
+#0 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(1381): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(631): CodeIgniter\Router\RouteCollection->create()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Config/Routes.php(53): CodeIgniter\Router\RouteCollection->add()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Config/Routes.php(10): require('/home/u31105968...')
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(776): require('/home/u31105968...')
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt()
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/u311059687/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2024-08-24 06:10:11 --> Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Views/errors/html/error_exception.php(211): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(299): include('/home/u31105968...')
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2024-08-24 06:10:31 --> Constant FILTER_SANITIZE_STRING is deprecated
+#0 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(1381): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(631): CodeIgniter\Router\RouteCollection->create()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Config/Routes.php(53): CodeIgniter\Router\RouteCollection->add()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Config/Routes.php(10): require('/home/u31105968...')
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(776): require('/home/u31105968...')
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt()
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/u311059687/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2024-08-24 06:10:31 --> Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Views/errors/html/error_exception.php(211): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(299): include('/home/u31105968...')
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2024-08-24 06:11:04 --> Constant FILTER_SANITIZE_STRING is deprecated
+#0 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(1381): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(631): CodeIgniter\Router\RouteCollection->create()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Config/Routes.php(53): CodeIgniter\Router\RouteCollection->add()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Config/Routes.php(10): require('/home/u31105968...')
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(776): require('/home/u31105968...')
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt()
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/u311059687/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2024-08-24 06:11:04 --> Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Views/errors/html/error_exception.php(211): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(299): include('/home/u31105968...')
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2024-08-24 06:12:16 --> Constant FILTER_SANITIZE_STRING is deprecated
+#0 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(1381): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(631): CodeIgniter\Router\RouteCollection->create()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Config/Routes.php(53): CodeIgniter\Router\RouteCollection->add()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Config/Routes.php(10): require('/home/u31105968...')
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(776): require('/home/u31105968...')
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt()
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/u311059687/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2024-08-24 06:12:16 --> Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Views/errors/html/error_exception.php(211): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(299): include('/home/u31105968...')
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2024-08-24 06:12:54 --> Constant FILTER_SANITIZE_STRING is deprecated
+#0 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(1381): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(631): CodeIgniter\Router\RouteCollection->create()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Config/Routes.php(53): CodeIgniter\Router\RouteCollection->add()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Config/Routes.php(10): require('/home/u31105968...')
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(776): require('/home/u31105968...')
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt()
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/u311059687/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2024-08-24 06:12:54 --> Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Views/errors/html/error_exception.php(211): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(299): include('/home/u31105968...')
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2024-08-24 06:12:56 --> Constant FILTER_SANITIZE_STRING is deprecated
+#0 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(1381): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(631): CodeIgniter\Router\RouteCollection->create()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Config/Routes.php(53): CodeIgniter\Router\RouteCollection->add()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Config/Routes.php(10): require('/home/u31105968...')
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(776): require('/home/u31105968...')
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt()
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/u311059687/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2024-08-24 06:12:56 --> Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Views/errors/html/error_exception.php(211): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(299): include('/home/u31105968...')
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2024-08-24 06:13:02 --> Constant FILTER_SANITIZE_STRING is deprecated
+#0 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(1381): CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Router/RouteCollection.php(631): CodeIgniter\Router\RouteCollection->create()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Config/Routes.php(53): CodeIgniter\Router\RouteCollection->add()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Config/Routes.php(10): require('/home/u31105968...')
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(776): require('/home/u31105968...')
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(360): CodeIgniter\CodeIgniter->tryToRouteIt()
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest()
+#7 /home/u311059687/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2024-08-24 06:13:02 --> Uncaught ErrorException: filter_var(): Passing null to parameter #3 ($options) of type array|int is deprecated in /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php:429
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(429): filter_var()
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(297): CodeIgniter\HTTP\Request->fetchGlobal()
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/system/HTTP/Request.php(114): CodeIgniter\HTTP\Request->getServer()
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Views/errors/html/error_exception.php(211): CodeIgniter\HTTP\Request->getIPAddress()
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(299): include('/home/u31105968...')
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Debug/Exceptions.php(172): CodeIgniter\Debug\Exceptions->render()
+#7 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler()
+#8 {main}
+  thrown
+#0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+#1 {main}
+CRITICAL - 2024-08-24 14:47:22 --> Unknown column 'User_Password' in 'where clause'
+#0 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT *\nFROM `...')
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Model.php(489): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Controllers/PageController.php(148): CodeIgniter\Model->first()
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(914): App\Controllers\PageController->login()
+#7 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+#8 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/u311059687/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-24 14:47:23 --> Invalid file: pages/forgot-password.php
+#0 /home/u311059687/domains/csistmarkschurch.com/public_html/system/View/View.php(228): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pages/forgot-pa...')
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Common.php(1087): CodeIgniter\View\View->render('pages/forgot-pa...', Array, true)
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Libraries/CT_view.php(30): view('pages/forgot-pa...', Array, Array)
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Controllers/PageController.php(107): App\Libraries\CT_view->load('pages/forgot-pa...', Array)
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(914): App\Controllers\PageController->forgot_password()
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 /home/u311059687/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2024-08-24 14:47:24 --> Unknown column 'User_Password' in 'where clause'
+#0 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT *\nFROM `...')
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Model.php(489): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Controllers/PageController.php(148): CodeIgniter\Model->first()
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(914): App\Controllers\PageController->login()
+#7 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+#8 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/u311059687/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2024-08-24 14:47:24 --> Unknown column 'User_Password' in 'where clause'
+#0 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Database/MySQLi/Connection.php(331): mysqli->query('SELECT *\nFROM `...')
+#1 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Database/BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Database/BaseConnection.php(666): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Database/BaseBuilder.php(1845): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /home/u311059687/domains/csistmarkschurch.com/public_html/system/Model.php(489): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/u311059687/domains/csistmarkschurch.com/public_html/app/Controllers/PageController.php(148): CodeIgniter\Model->first()
+#6 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(914): App\Controllers\PageController->login()
+#7 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(400): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PageController))
+#8 /home/u311059687/domains/csistmarkschurch.com/public_html/system/CodeIgniter.php(308): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 /home/u311059687/domains/csistmarkschurch.com/public_html/public/index.php(49): CodeIgniter\CodeIgniter->run()
+#10 {main}
